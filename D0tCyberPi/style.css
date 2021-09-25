@@ -41,17 +41,24 @@ header {
 .secondaryContainer {
   height: 650px;
   /*margin-bottom: 100px;*/
-  background-color: #6D8299;
+  background-color: #768faa;
 }
 
 .my-container {
   /*border: solid white;*/
 }
 .my-row {
-  /*border: dotted green;*/
+ /* border: dotted green;*/
+}
+.ctf-row {
+/*  border: dotted green; */
+}
+.ctf-col {
+  padding-top: 100px;
+  text-align: center;
 }
 .my-col {
-  /*border: dotted darkred;*/
+/*  border: dotted darkred; */
   padding-top: 200PX;
   height: 500px;
   text-align: center;
