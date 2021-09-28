@@ -20,7 +20,7 @@
   <nav class="navbar navbar-style">
     <div class="container">
       <a class="navbar-brand text-dark fw-bold logo" href="#">.CyberPi</a>
-      <button class="btn btn-success float-right" type="button" data-bs-toggle="modal" href="login.html" data-bs-target="#modalSignin">Login</button>
+      <button class="btn btn-success float-right" type="button" data-bs-toggle="modal" data-bs-target="#modalSignin">Login</button>
     </div>
   </nav>
   </header>
@@ -103,7 +103,8 @@
 </body>
 </html>
 
-
+<!-- Modals -->
+<!-- Login Modal -->
 <div class="modal fade" tabindex="-1" role="dialog" id="modalSignin">
   <div class="modal-dialog" role="document">
     <div class="modal-content rounded-5 shadow">
@@ -115,15 +116,50 @@
 
       <div class="modal-body p-5 pt-0">
         <form class="">
-          <div class="form-floating mb-3">
+          <div class="form-floating mb-3 needs-validation">
             <input type="email" class="form-control rounded-4" id="floatingInput" placeholder="name@example.com">
             <label for="floatingInput">Email address</label>
           </div>
-          <div class="form-floating mb-3">
+          <div class="form-floating mb-3 needs-validation">
             <input type="password" class="form-control rounded-4" id="floatingPassword" placeholder="Password">
             <label for="floatingPassword">Password</label>
           </div>
           <button class="w-100 mb-2 btn btn-lg rounded-4 btn-success" type="submit">Login</button>
+          <button class="w-100 mb-2 btn btn-lg rounded-4 btn-secondary" type="button" data-bs-toggle="modal" data-bs-target="#modalSignup">Sign up</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Signup Modal -->
+<div class="modal fade" tabindex="-1" role="dialog" id="modalSignup">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content rounded-5 shadow">
+      <div class="modal-header p-5 pb-4 border-bottom-0">
+        <!-- <h5 class="modal-title">Modal title</h5> -->
+        <h2 class="fw-bold mb-0">Sign Up</h2>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+
+      <div class="modal-body p-5 pt-0">
+        <form class="">
+          <div class="form-floating mb-3 needs-validation">
+            <input type="email" class="form-control rounded-4" id="floatingInput" placeholder="name@example.com" required>
+            <label for="floatingInput">Email address</label>
+          </div>
+          <div class="form-floating mb-3 needs-validation">
+            <input type="username" class="form-control rounded-4" id="floatingPassword" placeholder="Username" required>
+            <label for="floatingPassword">Username</label>
+          </div>
+          <div class="form-floating mb-3 needs-validation">
+            <input type="password" class="form-control rounded-4" id="floatingPassword" placeholder="Password" required>
+            <label for="floatingPassword">Password</label>
+          </div>
+          <div class="form-floating mb-3 needs-validation">
+            <input type="password" class="form-control rounded-4" id="floatingPassword" placeholder="Password" required>
+            <label for="floatingPassword">Repeat Password</label>
+          </div>
           <button class="w-100 mb-2 btn btn-lg rounded-4 btn-secondary" type="submit">Sign up</button>
           <small class="text-muted">By clicking Sign up, you agree to the terms of use.</small>
         </form>
