@@ -14,3 +14,9 @@ def login(request):
 
 def boxes(request):
     return render(request, 'accounts/boxes.html')
+
+def ctf_pi(request):
+    return render(request, 'accounts/ctf_pi.html')
+
+def ctf_crypto(request):
+    return render(request, 'accounts/ctf_crypto.html')

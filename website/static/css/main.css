@@ -7,6 +7,11 @@ header {
   margin-bottom: 100px;
 }
 
+/* Top Bar */
+.ctfButton {
+  margin-right: 20px;
+}
+
 /* Dashboard */
 .logo {
   font-size: 30px;
@@ -53,7 +58,7 @@ header {
   font-weight: 1000;
 }
 
-/* Login Screen */
+/* LOGIN PAGE */
 .loginContainer {
   margin-top: 200px;
   height: 500px;
@@ -66,4 +71,22 @@ header {
 .loginForms {
   margin-top: 10px;
   margin-bottom: 15px;
+}
+
+
+/* CTF PAGE */
+.boxesContainer {
+  margin-top: 200px;
+  height: 500px;
+}
+
+.lockIMG {
+  margin-left: 50px;
+  height: 240px;
+}
+
+.boxesContainer2 {
+  border: solid;
+  margin-top: 200px;
+  height: 500px;
 }
