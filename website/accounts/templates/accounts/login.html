@@ -1,0 +1,38 @@
+{% extends 'accounts/base.html' %}
+
+{% block content %}
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm">
+    </div>
+    <div class="col-sm">
+      <body class="text-center">
+    
+	<main class="form-signin loginContainer">
+		<form>
+    	<h1 class="h3 mb-3 font-weight-bold">Please sign in</h1>
+
+		<div class="form-floating loginForms">
+		<input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+    	</div>
+    	<div class="form-floating loginForms">
+		<input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+    	</div>
+
+    	<div class="checkbox mb-3">
+		<label>
+			<input type="checkbox" value="remember-me"> Remember me
+      	</label>
+    	</div>
+    	<button class="w-100 btn btn-lg btn-primary loginBtn" type="submit">Sign-In</button>
+    	<button class="w-100 btn btn-lg btn-secondary" type="submit">Sign-Up</button>
+  		</form>
+	</main>
+    </div>
+    <div class="col-sm">
+    </div>
+  </div>
+</div>
+
+{% endblock %}

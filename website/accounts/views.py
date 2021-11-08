@@ -6,8 +6,11 @@ from django.http import HttpResponse
 def home(request):
     return render(request, 'accounts/dashboard.html')
 
-def ctf(request):
-    return render(request, 'accounts/ctf.html')
+def user(request):
+    return render(request, 'accounts/user.html')
 
-def users(request):
-    return render(request, 'accounts/users.html')
+def login(request):
+    return render(request, 'accounts/login.html')
+
+def boxes(request):
+    return render(request, 'accounts/boxes.html')

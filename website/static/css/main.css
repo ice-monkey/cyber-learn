@@ -6,6 +6,8 @@ body {
 header {
   margin-bottom: 100px;
 }
+
+/* Dashboard */
 .logo {
   font-size: 30px;
 }
@@ -37,37 +39,31 @@ header {
 
 .mainContainer {
   height: 500px;
-  /*margin-bottom: 100px;*/
   background-color: #FED05F;
+  margin-top: 200px;
 }
 
 .secondaryContainer {
   height: 650px;
-  /*margin-bottom: 100px;*/
   background-color: #768faa;
-}
-
-.my-container {
-  /*border: solid white;*/
-}
-.my-row {
- /* border: dotted green;*/
-}
-.ctf-row {
-/*  border: dotted green; */
-}
-.ctf-col {
-  padding-top: 100px;
-  text-align: center;
-}
-.my-col {
-/*  border: dotted darkred; */
-  padding-top: 200PX;
-  height: 500px;
-  text-align: center;
 }
 
 .scoreboard {
   margin-top: 30px;
   font-weight: 1000;
+}
+
+/* Login Screen */
+.loginContainer {
+  margin-top: 200px;
+  height: 500px;
+}
+
+.loginBtn {
+  margin-bottom: 10px;
+}
+
+.loginForms {
+  margin-top: 10px;
+  margin-bottom: 15px;
 }
