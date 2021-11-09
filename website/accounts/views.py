@@ -53,12 +53,14 @@ def logoutUser(request):
     logout(request)
     return redirect('loginPage')
 
-
+@login_required(login_url='loginPage')
 def boxes(request):
     return render(request, 'accounts/boxes.html')
 
+@login_required(login_url='loginPage')
 def ctf_pi(request):
     return render(request, 'accounts/challenges/ctf_pi.html')
 
+@login_required(login_url='loginPage')
 def ctf_crypto(request):
     return render(request, 'accounts/challenges/ctf_crypto.html')
