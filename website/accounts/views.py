@@ -12,7 +12,7 @@ from django.contrib.auth.decorators import login_required
 
 from .forms import CreateUserForm
 
-@login_required(login_url='/loginPage')
+
 def home(request):
     return render(request, 'accounts/dashboard.html')
 
@@ -53,7 +53,7 @@ def logoutUser(request):
     logout(request)
     return redirect('loginPage')
 
-@login_required(login_url='loginPage')
+
 def boxes(request):
     return render(request, 'accounts/boxes.html')
 

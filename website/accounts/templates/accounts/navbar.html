@@ -10,7 +10,11 @@
         <a class="nav-link ctfButton font-weight-bold" href="boxes">CHALLENGES</a>
       </li>
       <li class="nav-item">
+        {% if request.user.is_authenticated %}
+        <button class="btn btn-success" type="button" onclick="location.href='logout'">Logout</button>
+        {% else %}
         <button class="btn btn-success" type="button" onclick="location.href='loginPage'">Login</button>
+        {% endif %}
     </div>
       </li>
     </ul>
