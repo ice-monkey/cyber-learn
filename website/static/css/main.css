@@ -64,6 +64,10 @@ header {
   height: 500px;
 }
 
+.loginContainer2 {
+  margin-top: 50px;
+}
+
 .loginBtn {
   margin-bottom: 10px;
 }
@@ -73,6 +77,11 @@ header {
   margin-bottom: 15px;
 }
 
+.singInHeader {
+  background-color: white;
+  border: solid black;
+  border-radius: 25px;
+}
 
 /* CTF PAGE */
 .boxesContainer {
@@ -89,4 +98,15 @@ header {
   border: solid;
   margin-top: 200px;
   height: 500px;
+}
+
+.mainContainerBox {
+  margin-top: 100px;
+  border: solid;
+  background-color: white;
+  border-radius: 25px;3
+}
+
+.flagForm {
+  margin-top: 50px;
 }

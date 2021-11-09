@@ -2,14 +2,27 @@
 
 {% block content %}
 
-<div class="container-fluid">
+<div class="container mainContainerBox">
+<div class="container-fluid boxesContainer3">
 	<div class="container">  
-    <div class="py-5 text-center">
-      <img class="d-block mx-auto mb-4" src="{{'static/img/pi.png'}}" alt="" width="72" height="57">
-      <h2><strong>Not So Pi</strong></h2>
-      <p class="lead">Use VPN to connect to the vulnerable Raspberry Pi. Hack your way into the system and get root access. etc.etc.etc.etc.etcetc.etc.etc.etc.etcetc.etc.etc.etc.etcetc.etc.etc.etc.etcetc.etc.etc.etc.etcetc.etc.etc.etc.etcetc.etc.etc.etc.etc.etc.... Happy Hacking</p>
-    </div>
-  </div>
+    	<div class="py-5 text-center">
+      		<img class="d-block mx-auto mb-4" src="{{'static/img/pi.png'}}" alt="" width="72" height="57">
+      		<h2><strong>Not So Pi</strong></h2>
+      		<p class="lead">Use VPN to connect to the vulnerable Raspberry Pi. Hack your way into the system and get root access. etc.etc.etc.etc.etcetc.etc.etc.etc.etc.etc.... Happy Hacking</p>
+    	</div>
+  	</div>
+  	<div class="container">
+  		<h5>VPN IP</h5>
+  		<input class="form-control" type="text" placeholder="Connect on this address: 154.23.56.11" readonly>
+
+  	<p></p>
+	<div class="input-group mb-3 flagForm">
+  		<input type="text" class="form-control" placeholder="fl4g{d1d_y0uF1nd_1t}">
+  	<div class="input-group-append">
+    	<button class="btn btn-dark" type="submit">Submit</button>
+  	</div>
+	</div>
+</div>
 </div>
 
 {% endblock %}
