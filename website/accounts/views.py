@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from django.forms import inlineformset_factory
 from django.contrib.auth.forms import UserCreationForm
@@ -15,10 +15,10 @@ def user(request):
 def login(request):
     return render(request, 'accounts/login.html')
 
-def registrer(request):
+def signup(request):
     form = UserCreationForm()
     context = {'form':form}
-    return render(request, 'accounts/registrer.html')
+    return render(request, 'accounts/signup.html')
 
 def boxes(request):
     return render(request, 'accounts/boxes.html')
