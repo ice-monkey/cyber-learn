@@ -2,58 +2,77 @@
 
 {% block content %}
 
-	<br>
-
-<div class="row">
-	<div class="col-md">
-		<div class="card card-body">
-			<h5>Account:</h5>
-			<hr>
-			<a class="btn btn-info  btn-sm btn-block" href="">Update Account</a>
-			<a class="btn btn-danger  btn-sm btn-block" href="">Delete Account</a>
-
-		</div>
-	</div>
-
-	<div class="col-md">
-		<div class="card card-body">
-			<h5>User Information</h5>
-			<hr>
-			<p>Email: </p>
-		</div>
-	</div>
-
-</div>
-
-
+<div class="container">
 <br>
-<div class="row">
-	<div class="col">
-		<div class="card card-body">
-			<form method="get">
-
-		    <button class="btn btn-primary" type="submit">Search</button>
-		  </form>
+	<div class="p-5 mb-4 rounded-3">
+        <h1 class="display-5 fw-bold">User Stats</h1>
+		<div class="row">
+			<div class="col-md">
+				<div class="card card-body">
+					<h5>User Information</h5>
+					<hr>
+					<input class="form-control" type="text" placeholder="Total Points: 2103" readonly>
+				</div>
+			</div>
+			<div class="col-md">
+				<div class="card">
+   					<div class="card-header">
+      					<h5 class="h3 mb-0">Points chart</h5>
+   					</div>
+			   	<div class="card-body">
+      				<div class="chart">
+			        	 <canvas id="chart-points" class="chart-canvas"></canvas>
+      				</div>
+   				</div>
+				</div>
+			</div>
 		</div>
-	</div>
-	
-</div>
 <br>
 
-<div class="row">
-	<div class="col-md">
-		<div class="card card-body">
-			<table class="table table-sm">
-				<tr>
-					<th>Category</th>
-					<th>Name</th>
-					<th>Date added</th>
-					<th>Status</th>
-					<th>Update</th>
-					<th>Remove</th>
-				</tr>
+<br>
+		<div class="row">
+			<div class="col-md">
+				<div class="card card-body">
+					<table class="table table-sm">
+						<tr>
+							<th>Date</th>
+							<th>Challenge</th>
+							<th>Time</th>
+							<th>Points</th>
+						</tr>
+					</table>
+				</div>
+			</div>
+		</div>
+<br>
 
-			</table>
+<br>
+		<div class="row">
+			<div class="col-md">
+				<div class="card card-body">
+					<h5>Account Information:</h5>
+					<hr>
+					<p>Username: </p>
+					<input class="form-control userInfo" type="text" placeholder="B1gBoii" readonly>
+					<p>Email: </p>
+					<input class="form-control userInfo" type="text" placeholder="bigbig@hotmail.com" readonly>
+					<br>
+					<p>Change Password: </p>
+					          <form method="POST" action="">
+              		{% csrf_token %}
+          <div class="form-floating loginForms">
+                {{form.password1}}
+            </div>
+             <div class="form-floating loginForms">
+                {{form.password2}}
+            </div>
+                <button class="w-100 mb-2 btn btn-lg rounded-4 btn-secondary" type="button" onclick="location.href='loginPage'">Update Password</button>
+            </form>
+					<hr>
+					<a class="btn btn-info  btn-sm btn-block" href="">Update Account</a>
+					<a class="btn btn-danger  btn-sm btn-block" href="">Delete Account</a>
+				</div>
+			</div>
 		</div>
 	</div>
 </div>
