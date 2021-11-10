@@ -2,29 +2,25 @@ from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from django.forms import inlineformset_factory
 from django.contrib.auth.forms import UserCreationForm
-
-
 from django.contrib.auth import authenticate, login, logout
-
 from django.contrib import messages
-
 from django.contrib.auth.decorators import login_required
-
 from .forms import CreateUserForm
-
 from .models import Flag
+from .models import User_points
 
 
 def home(request):
     return render(request, 'accounts/dashboard.html')
 
 def user_dash(request):
-    if request.method == "POST":
-        current_user =request.user
-        print(current_user.name)
+    current_user = request.user
+    get_user = User_points.objects.get(user=current_user)
+    user_points = get_user.points
+    print(user_points)
         
 
-    return render(request, 'accounts/user_dash.html')
+    return render(request, 'accounts/user_dash.html', {'user_points':user_points})
 
 def loginPage(request):
     if request.method == "POST":
@@ -44,12 +40,14 @@ def loginPage(request):
 
 def signup(request):
     form = CreateUserForm()
+    
 
     if request.method == "POST":
         form = CreateUserForm(request.POST)
         if form.is_valid():
             form.save()
             user = form.cleaned_data.get('username')
+        
             messages.success(request, f'Account was created for {user}' )
             return redirect('/loginPage')
 

@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth.models import User
 
 # Create your models here.
 
@@ -16,3 +17,7 @@ class Flag(models.Model):
 	name = models.CharField(max_length=200, null=True, default='')
 	description = models.CharField(max_length=200, null=True, default='')
 	point = models.IntegerField(default=0, null=True)
+
+class User_points(models.Model):
+	user = models.ForeignKey(User, null=True, on_delete=models.SET_NULL)
+	points = models.IntegerField(default=0, null=True)
