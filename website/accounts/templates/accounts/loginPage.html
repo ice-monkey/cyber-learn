@@ -1,0 +1,44 @@
+{% extends 'accounts/base.html' %}
+
+{% block content %}
+
+<div class="container loginContainer2">
+  <div class="row">
+    <div class="col-sm">
+    </div>
+    <div class="col-sm">
+      <body class="text-center">
+    
+	<main class="form-signin loginContainer">
+		<form method="POST" action="">
+			{% csrf_token %}
+    	<h1 class="h3 mb-3 font-weight-bold singInHeader">Please sign in</h1>
+
+		<div class="form-floating loginForms">
+		<input name ="username" type="text" class="form-control" id="floatingInput" placeholder="username">
+    	</div>
+    	<div class="form-floating loginForms">
+		<input name="password" type="password" class="form-control" id="floatingPassword" placeholder="Password">
+    	</div>
+				{% for message in messages %}
+				<p>{{message}}</p>
+				{% endfor %}
+    	<div class="checkbox mb-3">
+		<label>
+			<input type="checkbox" value="remember-me"> Remember me
+      	</label>
+    	</div>
+    	<button class="w-100 btn btn-lg btn-success loginBtn" type="submit">Sign-In</button>
+      <button class="w-100 mb-2 btn btn-lg rounded-4 btn-secondary" type="button" onclick="location.href='signup'">Sign-up</button>
+  		</form>
+	
+	</main>
+    </div>
+    <div class="col-sm">
+    </div>
+  </div>
+</div>
+
+
+
+{% endblock %}

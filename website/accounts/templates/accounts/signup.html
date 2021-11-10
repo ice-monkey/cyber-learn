@@ -1,0 +1,52 @@
+{% extends 'accounts/base.html' %}
+
+{% block content %}
+
+<div class="container loginContainer2">
+    <div class="row">
+      <div class="col-sm">
+      </div>
+      <div class="col-sm">
+        <body class="text-center">
+      
+      <main class="form-signin loginContainer">
+          <form method="POST" action="">
+              {% csrf_token %}
+          <h1 class="h3 mb-3 font-weight-bold singInHeader">Please sign up</h1>
+  
+          <div class="form-floating loginForms" class="form-control">
+                {{form.email}}
+          </div>
+          <div class="form-floating loginForms">
+                {{form.username}}
+          </div>
+          <div class="form-floating loginForms">
+                {{form.password1}}
+            </div>
+             <div class="form-floating loginForms">
+                {{form.password2}}
+            </div>
+                <button class="w-100 btn btn-lg btn-success loginBtn" type="submit">Sign-Up</button>
+                <button class="w-100 mb-2 btn btn-lg rounded-4 btn-secondary" type="button" onclick="location.href='loginPage'">Sign-In</button>
+            </form>
+                {{form.errors}}
+      </main>
+      </div>
+      <div class="col-sm">
+      </div>
+    </div>
+  </div>
+    <script>
+      var form_fields = document.getElementsByTagName('input')
+      form_fields[1].placeholder='E-mail'
+      form_fields[2].placeholder='Username'
+     form_fields[3].placeholder='Enter password'
+     form_fields[4].placeholder='Re-enter password'
+
+     for(var field in form_fields){
+         form_fields[field].className += ' form-control'
+      }
+  </script>
+
+{% endblock %}
+
