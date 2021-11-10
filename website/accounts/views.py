@@ -3,14 +3,16 @@ from django.http import HttpResponse
 from django.forms import inlineformset_factory
 from django.contrib.auth.forms import UserCreationForm
 
+
 from django.contrib.auth import authenticate, login, logout
 
 from django.contrib import messages
 
 from django.contrib.auth.decorators import login_required
 
-
 from .forms import CreateUserForm
+
+from .models import Flag
 
 
 def home(request):
@@ -59,6 +61,12 @@ def boxes(request):
 
 @login_required(login_url='loginPage')
 def ctf_pi(request):
+    if request.method == "POST":
+        flag = request.POST.get('flag')
+        flag_db = Flag.objects.get(name='flag1')
+        if flag == flag_db.description:
+            return redirect('/loginPage')
+
     return render(request, 'accounts/challenges/ctf_pi.html')
 
 @login_required(login_url='loginPage')

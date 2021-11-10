@@ -15,13 +15,15 @@
   		<h5>VPN IP</h5>
   		<input class="form-control" type="text" placeholder="Connect on this address: 154.23.56.11" readonly>
 
-  	<p></p>
+  	<form method="POST" action="">
+		  {% csrf_token %}
 	<div class="input-group mb-3 flagForm">
-  		<input type="text" class="form-control" placeholder="fl4g{d1d_y0uF1nd_1t}">
+  		<input name='flag' type="text" class="form-control" placeholder="fl4g{d1d_y0uF1nd_1t}">
   	<div class="input-group-append">
     	<button class="btn btn-dark" type="submit">Submit</button>
   	</div>
 	</div>
+	</form>
 </div>
 </div>
 

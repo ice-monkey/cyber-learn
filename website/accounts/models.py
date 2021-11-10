@@ -13,6 +13,6 @@ class Scoreboard(models.Model):
 	#client
 
 class Flag(models.Model):
-	#name 
-	#description
-	pass
+	name = models.CharField(max_length=200, null=True, default='')
+	description = models.CharField(max_length=200, null=True, default='')
+	point = models.IntegerField(default=0, null=True)
