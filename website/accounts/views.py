@@ -18,8 +18,13 @@ from .models import Flag
 def home(request):
     return render(request, 'accounts/dashboard.html')
 
-def user(request):
-    return render(request, 'accounts/user.html')
+def user_dash(request):
+    if request.method == "POST":
+        current_user =request.user
+        print(current_user.name)
+        
+
+    return render(request, 'accounts/user_dash.html')
 
 def loginPage(request):
     if request.method == "POST":
@@ -72,3 +77,5 @@ def ctf_pi(request):
 @login_required(login_url='loginPage')
 def ctf_crypto(request):
     return render(request, 'accounts/challenges/ctf_crypto.html')
+
+
