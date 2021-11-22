@@ -13,8 +13,8 @@
 					<hr>
 					<form method="POST" action="">
 						{% csrf_token %}
-					<input class="form-control" type="text" placeholder="Total Points: 2103" readonly>
-					{{user_points}}
+					<input class="form-control" type="text" placeholder="{{user_points}}" readonly >
+					
 				</div>
 			</form>
 			</div>
@@ -83,7 +83,7 @@
 
 <script>
 	var form_fields = document.getElementsByTagName('input')
-	form_fields[1].placeholder="{{request.points}}"
+	form_fields[1].placeholder="{{user_points}}"
 	form_fields[2].placeholder="{{request.user}}"
 	form_fields[3].placeholder='Re-enter password'
 
