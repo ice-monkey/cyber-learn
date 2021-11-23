@@ -13,6 +13,7 @@ from django.db.models.signals import post_save
 from django.dispatch import receiver
 
 
+
 def home(request):
     return render(request, 'accounts/dashboard.html')
 
@@ -75,10 +76,22 @@ def ctf_pi(request):
     if request.method == "POST":
         flag = request.POST.get('flag')
         flag_db = Flag.objects.get(name='flag1')
+        get_user = request.user
+        points = flag_db.point
         if flag == flag_db.description:
+            user = User_points.objects.get(user=get_user)
+            user.points += points
+            user.save()
             return redirect('/loginPage')
 
     return render(request, 'accounts/challenges/ctf_pi.html')
+
+'''@receiver(post_save, sender=User)
+def add_points(instance, **kwargs):
+        flag_db = Flag.objects.get(name='flag1')
+        points = flag_db.point
+        print(points)
+        User_points.objects.annotate(user=instance, points=points)'''
 
 @login_required(login_url='loginPage')
 def ctf_crypto(request):

@@ -22,4 +22,7 @@ class User_points(models.Model):
 	user = models.ForeignKey(User, null=True, on_delete=models.SET_NULL)
 	points = models.IntegerField(default=0)
 
+class User_flag(models.Model):
+	user = models.ForeignKey(User, null=True, on_delete=models.SET_NULL)
+	flag = models.ForeignKey()
 
