@@ -9,6 +9,7 @@ from django.contrib.auth.decorators import login_required
 from .forms import CreateUserForm
 from .models import Flag
 from .models import User_points
+from .models import User_flag
 from django.db.models.signals import post_save
 from django.dispatch import receiver
 
@@ -73,25 +74,27 @@ def boxes(request):
 
 @login_required(login_url='loginPage')
 def ctf_pi(request):
+    
     if request.method == "POST":
         flag = request.POST.get('flag')
-        flag_db = Flag.objects.get(name='flag1')
+        flag_db = Flag.objects.get(description=flag)
         get_user = request.user
-        points = flag_db.point
-        if flag == flag_db.description:
-            user = User_points.objects.get(user=get_user)
-            user.points += points
-            user.save()
+        
+        if User_flag.objects.filter(flag_object=flag_db, user=get_user).exists():
+            print("flag nope")
+        else:
+            print("flag juhuu")
+        
+            points = flag_db.point
+            if flag == flag_db.description:
+                user = User_points.objects.get(user=get_user)
+                User_flag.objects.create(user=get_user, flag_object=flag_db)
+                user.points += points
+                user.save()
             return redirect('/loginPage')
 
     return render(request, 'accounts/challenges/ctf_pi.html')
 
-'''@receiver(post_save, sender=User)
-def add_points(instance, **kwargs):
-        flag_db = Flag.objects.get(name='flag1')
-        points = flag_db.point
-        print(points)
-        User_points.objects.annotate(user=instance, points=points)'''
 
 @login_required(login_url='loginPage')
 def ctf_crypto(request):

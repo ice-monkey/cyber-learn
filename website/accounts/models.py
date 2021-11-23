@@ -1,3 +1,4 @@
+from typing import NamedTuple
 from django.db import models
 from django.contrib.auth.models import User
 
@@ -24,5 +25,5 @@ class User_points(models.Model):
 
 class User_flag(models.Model):
 	user = models.ForeignKey(User, null=True, on_delete=models.SET_NULL)
-	flag = models.ForeignKey()
+	flag_object = models.ForeignKey(Flag, null=True, on_delete=models.SET_NULL)
 
