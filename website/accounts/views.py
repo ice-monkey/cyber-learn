@@ -28,6 +28,8 @@ def user_dash(request):
     return render(request, 'accounts/user_dash.html', {'user_points':user_points})
 
 def loginPage(request):
+    if 'next' in request.GET:
+        messages.add_message(request, messages.INFO, 'You must be signed in to view this page')
     if request.method == "POST":
         username = request.POST.get('username')
         password = request.POST.get('password')
