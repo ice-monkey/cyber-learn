@@ -2,21 +2,58 @@
 
 {% block content %}
 
-<div class="container boxesContainer">
+<div class="container pentestContainer">
+  	<h1 class="boxesHeader">Pentest Labs</h1>
 	<div class="row text-center">
   		<div class="col-sm">
-			<img src="{{'static/img/pi.png'}}" class="img-fluid">
+			<img src="{{'static/img/pt.png'}}" class="img-fluid pentestIMG">
+			<p>TalesOfRaspianOS</p>
 			<button type="button" class="btn btn-dark" onclick="location.href='ctf_pi'">Hack it!</button>
     	</div>
     	<div class="col-sm">
-			<img src="{{'static/img/pi.png'}}" class="img-fluid">
+			<img src="{{'static/img/pt.png'}}" class="img-fluid pentestIMG">
 			<p class="text-center font-weight-bold text-danger">COMING SOON!</p>
     	</div>
     	<div class="col-sm">
-    	<img src="{{'static/img/pi.png'}}" class="img-fluid">
+    	<img src="{{'static/img/pt.png'}}" class="img-fluid pentestIMG">
 			<p class="text-center font-weight-bold text-danger">COMING SOON!</p>
     	</div>
   </div>
 </div>
-
+<div class="container networkContainer">
+  	<h1 class="boxesHeader">Network Labs</h1>
+	<div class="row text-center">
+  		<div class="col-sm">
+			<img src="{{'static/img/ws.png'}}" class="img-fluid wiresharkIMG">
+			<p>What'aCapture</p>
+			<button type="button" class="btn btn-dark" onclick="location.href=''">Analyse it!</button>
+    	</div>
+    	<div class="col-sm">
+			<img src="{{'static/img/ws.png'}}" class="img-fluid wiresharkIMG">
+			<p class="text-center font-weight-bold text-danger">COMING SOON!</p>
+    	</div>
+    	<div class="col-sm">
+    	<img src="{{'static/img/ws.png'}}" class="img-fluid wiresharkIMG">
+			<p class="text-center font-weight-bold text-danger">COMING SOON!</p>
+    	</div>
+  </div>
+</div>
+<div class="container codingContainer">
+  	<h1 class="boxesHeader">Coding Labs</h1>
+	<div class="row text-center">
+  		<div class="col-sm">
+			<img src="{{'static/img/code.png'}}" class="img-fluid codeIMG">
+			<p>LanguageOrSnake?</p>
+			<button type="button" class="btn btn-dark" onclick="location.href=''">Code it!</button>
+    	</div>
+    	<div class="col-sm">
+			<img src="{{'static/img/code.png'}}" class="img-fluid codeIMG">
+			<p class="text-center font-weight-bold text-danger">COMING SOON!</p>
+    	</div>
+    	<div class="col-sm">
+    	<img src="{{'static/img/code.png'}}" class="img-fluid codeIMG">
+			<p class="text-center font-weight-bold text-danger">COMING SOON!</p>
+    	</div>
+  </div>
+</div>
 {% endblock %}
