@@ -7,21 +7,26 @@ header {
   margin-bottom: 100px;
 }
 
+
 /* Top Bar */
 .ctfButton {
   margin-right: 20px;
 }
 
+
 /* Dashboard */
 .logo {
   font-size: 30px;
 }
+
 .text-white {
   text-align: center;
 }
+
 .btn-success {
   margin-left: auto;
 }
+
 #bubble {
   margin: 20px 20px 20px 20px;
   border:black solid;#pane
@@ -58,6 +63,7 @@ header {
   font-weight: 1000;
 }
 
+
 /* LOGIN PAGE */
 .loginContainer {
   margin-top: 200px;
@@ -83,37 +89,47 @@ header {
   border-radius: 25px;
 }
 
+
 /* CTF PAGE */
 .boxesHeader {
   font-weight: bold;
+  text-align: center;  
 }
-.backBTN {
-  font-weight: bolder;
-  font-size: 20px;
-}
+
 .boxIMG {
   margin: 24px;
   max-width: 70%;
 }
+
+.boxBTN {
+
+}
+
 .pentestContainer {
-  text-align: center;
+  text-align: center;  
   background-color: #ffd46e;
+  border-radius: 20px;
   margin-top: 80px;
   padding: 40px;
 }
+
 .networkContainer {
   text-align: center;
   background-color: #ffd46e;
+  border-radius: 20px;
   margin-top: 20px;
   padding: 40px;
 }
+
 .codingContainer {
   text-align: center;
   background-color: #ffd46e;
+  border-radius: 20px;
   margin-top: 20px;
   margin-bottom: 40px;
   padding: 40px;
 }
+
 pre code {
   background-color: #eee;
   border: 1px solid #999;
