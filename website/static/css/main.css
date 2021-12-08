@@ -91,39 +91,28 @@ header {
   font-weight: bolder;
   font-size: 20px;
 }
+.boxIMG {
+  margin: 24px;
+  max-width: 70%;
+}
 .pentestContainer {
   text-align: center;
-  align-items: center;
   background-color: #ffd46e;
   margin-top: 80px;
   padding: 40px;
 }
-.pentestIMG {
-  margin: 24px;
-  max-width: 70%;
-}
 .networkContainer {
   text-align: center;
-  align-items: center;
   background-color: #ffd46e;
   margin-top: 20px;
   padding: 40px;
 }
-.wiresharkIMG {
-  margin: 24px;
-  max-width: 70%;
-}
 .codingContainer {
   text-align: center;
-  align-items: center;
   background-color: #ffd46e;
   margin-top: 20px;
   margin-bottom: 40px;
   padding: 40px;
-}
-.codeIMG {
-  margin: 24px;
-  max-width: 70%;
 }
 pre code {
   background-color: #eee;
