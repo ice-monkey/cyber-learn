@@ -8,6 +8,8 @@ urlpatterns = [
     path('logout/', views.logoutUser, name="logout"),
     path('signup', views.signup),
     path('boxes', views.boxes),
-    path('ctf_pi', views.ctf_pi),
-    path('ctf_crypto', views.ctf_crypto),
+    path('ctf_NotSoPi', views.ctf_NotSoPi),
+    path('ctf_WhataCapture', views.ctf_WhataCapture),
+    path('ctf_LanguageOrSnake', views.ctf_LanguageOrSnake),
+    path('vpn_connect', views.vpn_connect),
 ]

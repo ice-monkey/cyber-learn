@@ -75,7 +75,7 @@ def boxes(request):
     return render(request, 'accounts/boxes.html')
 
 @login_required(login_url='loginPage')
-def ctf_pi(request):
+def ctf_NotSoPi(request):
     
     if request.method == "POST":
         flag = request.POST.get('flag')
@@ -95,11 +95,17 @@ def ctf_pi(request):
                 user.save()
             return redirect('/loginPage')
 
-    return render(request, 'accounts/challenges/ctf_pi.html')
+    return render(request, 'accounts/challenges/ctf_NotSoPi.html')
 
 
 @login_required(login_url='loginPage')
-def ctf_crypto(request):
-    return render(request, 'accounts/challenges/ctf_crypto.html')
+def ctf_WhataCapture(request):
+    return render(request, 'accounts/challenges/ctf_WhataCapture.html')
 
+@login_required(login_url='loginPage')
+def ctf_LanguageOrSnake(request):
+    return render(request, 'accounts/challenges/ctf_LanguageOrSnake.html')
 
+@login_required(login_url='loginPage')
+def vpn_connect(request):
+    return render(request, 'accounts/vpn_connect.html')

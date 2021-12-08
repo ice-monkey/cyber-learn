@@ -1,0 +1,29 @@
+{% extends 'accounts/base.html' %}
+
+{% block content %}
+
+<div class="container mainContainerBox">
+	<div class="container-fluid boxesContainer3">
+		<div class="container">  
+	    	<div class="py-5 text-center">
+	      		<img class="d-block mx-auto mb-4" src="{{'static/img/pi.png'}}" alt="" width="72" height="57">
+	      		<h2><strong>What'aCapture</strong></h2>
+	      		<p class="lead">Analyse this amazing pcap file. Is a plaintext password really a great idea?... Can you find the flag?..... Happy Analysing</p>
+	      		<button class="btn btn-success" type="submit">Download .pcap file</button>
+	    	</div>
+	  	</div>
+	  	<div class="container">
+	  		<form method="POST" action="">
+			  {% csrf_token %}
+				<div class="input-group mb-3 flagForm">
+	  				<input name='flag' type="text" class="form-control" placeholder="CP{flag}">
+	  				<div class="input-group-append">
+	    				<button class="btn btn-dark" type="submit">Submit</button>
+	  				</div>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
+
+{% endblock %}
