@@ -20,10 +20,10 @@ class Flag(models.Model):
 	point = models.IntegerField(default=0, null=True)
 
 class User_points(models.Model):
-	user = models.ForeignKey(User, null=True, on_delete=models.SET_NULL)
+	user = models.ForeignKey(User, null=True, on_delete=models.CASCADE)
 	points = models.IntegerField(default=0)
 
 class User_flag(models.Model):
-	user = models.ForeignKey(User, null=True, on_delete=models.SET_NULL)
-	flag_object = models.ForeignKey(Flag, null=True, on_delete=models.SET_NULL)
+	user = models.ForeignKey(User, null=True, on_delete=models.CASCADE)
+	flag_object = models.ForeignKey(Flag, null=True, on_delete=models.CASCADE)
 

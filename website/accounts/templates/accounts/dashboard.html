@@ -20,9 +20,10 @@
         		</div>
         	</div>
       	</div>
+		{% if request.user.is_authenticated %}
       	<div class="col scoreBox">
 	      	<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-		        <h2>Top User</h2>
+		        <h2>Top 10 Users</h2>
 		        <div class="form-group">
 					<select class="form-control topDROP">
 					  <option selected>All Time</option>
@@ -45,19 +46,56 @@
 	          <tbody>
 	            <tr>
 	              <td>01</td>
-	              <td>Bigbob</td>
-	              <td>1084</td>
+	              <td>{{user1}}</td>
+	              <td>{{points1}}</td>
 	            </tr>
-	            <tr>
-	              <td>02</td>
-	              <td>littleWhiskey</td>
-	              <td>942</td>
-	            </tr>
+				<tr>
+					<td>02</td>
+					<td>{{user2}}</td>
+					<td>{{points2}}</td>
+				  </tr>
+				  <tr>
+					<td>03</td>
+					<td>{{user3}}</td>
+					<td>{{points3}}</td>
+				  </tr>
+				  <tr>
+					<td>04</td>
+					<td>{{user4}}</td>
+					<td>{{points4}}</td>
+				  </tr>
+				  <tr>
+					<td>05</td>
+					<td>{{user5}}</td>
+					<td>{{points5}}</td>
+				  </tr>
+	           
 	          </tbody>
 	        </table>
 	      </div>
     	</div>
+		{% endif %}
     </div>
 </div>
+
+<script>
+	var form_fields = document.getElementsByTagName('input')
+	form_fields[1].placeholder="{{user1}}"
+	form_fields[2].placeholder="{{user2}}"
+	form_fields[3].placeholder="{{user3}}"
+	form_fields[4].placeholder="{{user4}}"
+	form_fields[5].placeholder="{{user5}}"
+	form_fields[6].placeholder="{{points1}}"
+	form_fields[7].placeholder="{{points2}}"
+	form_fields[8].placeholder="{{points3}}"
+	form_fields[9].placeholder="{{points4}}"
+	form_fields[10].placeholder="{{points5}}"
+	
+
+
+    for(var field in form_fields){
+	   form_fields[field].className += ' form-control'
+	}
+</script>
 
 {% endblock %}

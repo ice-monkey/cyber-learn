@@ -16,12 +16,19 @@ from django.dispatch import receiver
 
 
 
-def home(request):
+def dashboard(request):
+    scoreboard_objects = User_points.objects.all().order_by('-points')
+    
+    user1, user2, user3, user4, user5, *rest = [str(e.user) for e in scoreboard_objects]
+    points1, points2, points3, points4, points5 = [e.points for e in scoreboard_objects]
+
+    
+    
     if not request.user.is_anonymous:
         current_user = request.user
         get_user = User_points.objects.get(user=current_user)
         user_points = get_user.points
-        return render(request, 'accounts/dashboard.html', {'user_points':user_points})
+        return render(request, 'accounts/dashboard.html', {'user_points':user_points, 'user1':user1, 'user2':user2, 'user3':user3, 'user4':user4, 'user5':user5, 'points1':points1, 'points2':points2, 'points3':points3, 'points4':points4, 'points5':points5})
     return render(request, 'accounts/dashboard.html')
 
 def user_dash(request):
