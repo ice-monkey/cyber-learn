@@ -12,5 +12,6 @@ urlpatterns = [
     path('ctf_WhataCapture', views.ctf_WhataCapture),
     path('ctf_LanguageOrSnake', views.ctf_LanguageOrSnake),
     path('vpn_connect', views.vpn_connect),
- 
+    path('delete', views.remove_account),
+    
 ]

@@ -71,9 +71,12 @@
             		</form>
 					<hr>
 					<div class="row ">
+						<form method="POST" action="delete">
+							{% csrf_token %}
 						<div class="col-md">
-							<a class="btn btn-danger" href="">Delete Account</a>
+							<button type="submit" value="delete" class="w-100 mb-2 btn btn-lg rounded-4 btn-danger" type="button">Delete user</button>
 						</div>
+						</form>
 						<div class="col-md">
 						</div>
 						<div class="col-md">
