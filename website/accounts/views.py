@@ -24,7 +24,6 @@ def user_dash(request):
     user_points = get_user.points
     print(user_points)
         
-
     return render(request, 'accounts/user_dash.html', {'user_points':user_points})
 
 def loginPage(request):
