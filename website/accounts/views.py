@@ -15,7 +15,13 @@ from django.dispatch import receiver
 
 
 
+
 def home(request):
+    if not request.user.is_anonymous:
+        current_user = request.user
+        get_user = User_points.objects.get(user=current_user)
+        user_points = get_user.points
+        return render(request, 'accounts/dashboard.html', {'user_points':user_points})
     return render(request, 'accounts/dashboard.html')
 
 def user_dash(request):
@@ -71,11 +77,16 @@ def logoutUser(request):
 
 @login_required(login_url='loginPage')
 def boxes(request):
-    return render(request, 'accounts/boxes.html')
+    current_user = request.user
+    get_user = User_points.objects.get(user=current_user)
+    user_points = get_user.points
+    return render(request, 'accounts/boxes.html', {'user_points':user_points})
 
 @login_required(login_url='loginPage')
 def ctf_NotSoPi(request):
-    
+    current_user = request.user
+    get_user = User_points.objects.get(user=current_user)
+    user_points = get_user.points
     if request.method == "POST":
         flag = request.POST.get('flag')
         flag_db = Flag.objects.get(description=flag)
@@ -92,9 +103,9 @@ def ctf_NotSoPi(request):
                 User_flag.objects.create(user=get_user, flag_object=flag_db)
                 user.points += points
                 user.save()
-            return redirect('/loginPage')
+            return redirect('/ctf_NotSoPi')
 
-    return render(request, 'accounts/challenges/ctf_NotSoPi.html')
+    return render(request, 'accounts/challenges/ctf_NotSoPi.html', {'user_points':user_points})
 
 
 @login_required(login_url='loginPage')

@@ -11,7 +11,8 @@
         </li>
       <li class="nav-item">
         {% if request.user.is_authenticated %}
-        <button type="button" class="btn btn-secondary" disabled>points</button>
+        
+        <button type="button" class="btn btn-secondary" disabled>{{user_points}}</button>
         <button class="btn btn-success" type="button" onclick="location.href='user_dash'">Profile</button>
         <button class="btn btn-link text-danger text-decoration-none" type="button" onclick="location.href='logout'">Logout</button>
         {% else %}
@@ -22,3 +23,13 @@
     </ul>
   </div>
 </nav>
+<script>
+	var form_fields = document.getElementsByTagName('input')
+	form_fields[1].placeholder="{{user_points}}"
+
+
+   for(var field in form_fields){
+	   form_fields[field].className += ' form-control'
+	}
+</script>
+
