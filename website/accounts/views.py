@@ -15,6 +15,20 @@ from django.dispatch import receiver
 
 
 
+def delete_user(request, username):
+    context = {}
+    
+    try:
+        u = User.objects.get(username=username)
+        u.delete()
+        context['msg'] = 'The user is deleted.'       
+    except User.DoesNotExist: 
+        context['msg'] = 'User does not exist.'
+    except Exception as e: 
+        context['msg'] = e.message
+
+    return render(request, '/dashboard', context=context) 
+
 
 def dashboard(request):
     scoreboard_objects = User_points.objects.all().order_by('-points')

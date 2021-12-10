@@ -41,7 +41,6 @@
 						<tr>
 							<th>Date</th>
 							<th>Challenge</th>
-							<th>Time</th>
 							<th>Points</th>
 						</tr>
 					</table>
@@ -58,8 +57,6 @@
 					<hr>
 					<p>Username: </p>
 					<input class="form-control userInfo" type="text" placeholder="Username: {{request.user}}" readonly>
-					<p>Email: </p>
-					<input class="form-control userInfo" type="text" placeholder="{{request.email}}" readonly>
 					<br>
 					<!-- <p>Change Password: </p> -->
 					<form method="POST" action="">
@@ -92,7 +89,6 @@
 	var form_fields = document.getElementsByTagName('input')
 	form_fields[1].placeholder="{{user_points}}"
 	form_fields[2].placeholder="{{request.user}}"
-	form_fields[3].placeholder='Re-enter password'
 
     for(var field in form_fields){
 	   form_fields[field].className += ' form-control'
