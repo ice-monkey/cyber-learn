@@ -28,9 +28,11 @@ def remove_account(request):
 
 def dashboard(request):
     scoreboard_objects = User_points.objects.all().order_by('-points')
-    
-    user1, user2, user3, user4, user5, *rest = [str(e.user) for e in scoreboard_objects]
-    points1, points2, points3, points4, points5 = [e.points for e in scoreboard_objects]
+
+    usernames = [str(e.user) for e in scoreboard_objects]
+    points = [e.points for e in scoreboard_objects]
+
+    user_and_points = zip(usernames, points)
 
     
     
@@ -38,7 +40,7 @@ def dashboard(request):
         current_user = request.user
         get_user = User_points.objects.get(user=current_user)
         user_points = get_user.points
-        return render(request, 'accounts/dashboard.html', {'user_points':user_points, 'user1':user1, 'user2':user2, 'user3':user3, 'user4':user4, 'user5':user5, 'points1':points1, 'points2':points2, 'points3':points3, 'points4':points4, 'points5':points5})
+        return render(request, 'accounts/dashboard.html', {'user_and_points':user_and_points, 'user_points':user_points})
     return render(request, 'accounts/dashboard.html')
 
 def user_dash(request):
@@ -60,7 +62,7 @@ def loginPage(request):
 
         if user is not None:
             login(request, user)
-            return redirect('/boxes')
+            return redirect('/')
         else:
             messages.info(request, "Username or password is incorrect")
             
