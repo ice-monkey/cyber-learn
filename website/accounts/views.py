@@ -44,12 +44,19 @@ def dashboard(request):
     return render(request, 'accounts/dashboard.html')
 
 def user_dash(request):
+    scoreboard_objects = User_flag.objects.all().order_by('date_created')
+
+    #username = [str(e.user) for e in scoreboard_objects]
+    flag = [e.flag_object for e in scoreboard_objects]
+    date_created = [e.date_created for e in scoreboard_objects]
+
+    user_and_flag = zip(flag, date_created)
     current_user = request.user
     get_user = User_points.objects.get(user=current_user)
     user_points = get_user.points
-    print(user_points)
+    
         
-    return render(request, 'accounts/user_dash.html', {'user_points':user_points})
+    return render(request, 'accounts/user_dash.html', {'user_points':user_points, 'user_and_flag':user_and_flag})
 
 def loginPage(request):
     if 'next' in request.GET:

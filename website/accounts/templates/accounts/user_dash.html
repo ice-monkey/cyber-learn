@@ -34,19 +34,24 @@
 <br>
 
 <br>
-		<div class="row">
-			<div class="col-md">
-				<div class="card card-body">
-					<table class="table table-sm">
-						<tr>
-							<th>Date</th>
-							<th>Challenge</th>
-							<th>Points</th>
-						</tr>
-					</table>
-				</div>
-			</div>
-		</div>
+<div class="table-responsive">
+	<table class="table table-striped table-sm">
+	  <thead>
+		<tr>
+		  <th scope="col">Date</th>
+		  <th scope="col">Point</th>
+		</tr>
+	  </thead>
+	  <tbody>
+		{% for flag, date_created in user_and_flag %}
+		<tr>
+		  <td>{{date_created}}</td>
+		  <td>{{flag}}</td>
+		{% endfor %}
+		</tr>
+	  </tbody>
+	</table>
+  </div>
 <br>
 
 <br>
@@ -92,6 +97,7 @@
 	var form_fields = document.getElementsByTagName('input')
 	form_fields[1].placeholder="{{user_points}}"
 	form_fields[2].placeholder="{{request.user}}"
+	form_fields[3].placeholder="{{user_and_flag}}"
 
     for(var field in form_fields){
 	   form_fields[field].className += ' form-control'
