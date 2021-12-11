@@ -111,10 +111,6 @@ table {
   max-width: 70%;
 }
 
-.boxBTN {
-
-}
-
 .pentestContainer {
   text-align: center;  
   background-color: #ffd46e;
@@ -169,6 +165,20 @@ pre code {
 .dashboardHeader {
   font-weight: bold;
 }
+
 .userInfo {
   margin-bottom: 15px;
+}
+
+.challBox {
+  background: white;
+  border-radius: 5px;
+}
+
+.challHeader {
+  font-weight: bold;
+}
+
+.challTable {
+  padding: 10px;
 }

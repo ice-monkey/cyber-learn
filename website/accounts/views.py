@@ -18,7 +18,6 @@ from django.dispatch import receiver
 
 
 @login_required
-
 def remove_account(request):
     user = request.user
     user_pk = request.user.pk
@@ -34,8 +33,6 @@ def dashboard(request):
 
     user_and_points = zip(usernames, points)
 
-    
-    
     if not request.user.is_anonymous:
         current_user = request.user
         get_user = User_points.objects.get(user=current_user)
@@ -54,8 +51,6 @@ def user_dash(request):
     current_user = request.user
     get_user = User_points.objects.get(user=current_user)
     user_points = get_user.points
-    
-        
     return render(request, 'accounts/user_dash.html', {'user_points':user_points, 'user_and_flag':user_and_flag})
 
 def loginPage(request):
@@ -78,7 +73,6 @@ def loginPage(request):
 
 def signup(request):
     form = CreateUserForm()
-    
 
     if request.method == "POST":
         form = CreateUserForm(request.POST)
