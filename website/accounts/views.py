@@ -57,8 +57,10 @@ def loginPage(request):
     if 'next' in request.GET:
         messages.add_message(request, messages.INFO, 'You must be signed in to view this page')
     
-    if request.user is not None:
-        return redirect('/')
+
+#    if request.user is not None:
+#        return redirect('/')
+
 
     if request.method == "POST":
         username = request.POST.get('username')
