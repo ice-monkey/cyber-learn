@@ -115,21 +115,21 @@ def ctf_NotSoPi(request):
     user_points = get_user.points
     if request.method == "POST":
         flag = request.POST.get('flag')
-        flag_db = Flag.objects.get(description=flag)
-        get_user = request.user
-        
-        if User_flag.objects.filter(flag_object=flag_db, user=get_user).exists():
-            print("flag nope")
+        if Flag.objects.filter(description=flag).exists():
+            flag_db = Flag.objects.get(description=flag)
+            get_user = request.user
+            if User_flag.objects.filter(flag_object=flag_db, user=get_user).exists():
+                points = flag_db.point
+                if flag == flag_db.description:
+                    user = User_points.objects.get(user=get_user)
+                    User_flag.objects.create(user=get_user, flag_object=flag_db)
+                    user.points += points
+                    user.save()
+                    messages.add_message(request, messages.INFO, 'Congrats, you got af flag')
         else:
-            print("flag juhuu")
+            messages.add_message(request, messages.INFO, 'Wrong flag')
         
-            points = flag_db.point
-            if flag == flag_db.description:
-                user = User_points.objects.get(user=get_user)
-                User_flag.objects.create(user=get_user, flag_object=flag_db)
-                user.points += points
-                user.save()
-            return redirect('/ctf_NotSoPi')
+
 
     return render(request, 'accounts/challenges/ctf_NotSoPi.html', {'user_points':user_points})
 
