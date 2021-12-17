@@ -58,8 +58,8 @@ def loginPage(request):
         messages.add_message(request, messages.INFO, 'You must be signed in to view this page')
     
 
-#    if request.user is not None:
-#        return redirect('/')
+    if not request.user.is_anonymous:
+        return redirect('/')
 
 
     if request.method == "POST":
@@ -78,6 +78,9 @@ def loginPage(request):
     return render(request, 'accounts/loginPage.html')
 
 def signup(request):
+    if not request.user.is_anonymous:
+        return redirect('/')
+    
     form = CreateUserForm()
 
     if request.method == "POST":
