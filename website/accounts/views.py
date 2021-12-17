@@ -118,14 +118,16 @@ def ctf_NotSoPi(request):
         if Flag.objects.filter(description=flag).exists():
             flag_db = Flag.objects.get(description=flag)
             get_user = request.user
+            points = flag_db.point
+            print(points)
             if User_flag.objects.filter(flag_object=flag_db, user=get_user).exists():
-                points = flag_db.point
-                if flag == flag_db.description:
-                    user = User_points.objects.get(user=get_user)
-                    User_flag.objects.create(user=get_user, flag_object=flag_db)
-                    user.points += points
-                    user.save()
-                    messages.add_message(request, messages.INFO, 'Congrats, you got af flag')
+                messages.add_message(request, messages.INFO, 'You already got this flag')
+            elif flag == flag_db.description:
+                user = User_points.objects.get(user=get_user)
+                User_flag.objects.create(user=get_user, flag_object=flag_db)
+                user.points += points
+                user.save()
+                messages.add_message(request, messages.INFO, 'Congrats, you got af flag')
         else:
             messages.add_message(request, messages.INFO, 'Wrong flag')
         
