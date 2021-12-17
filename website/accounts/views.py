@@ -31,7 +31,7 @@ def dashboard(request):
         current_user = request.user
         get_user = User_points.objects.get(user=current_user)
         user_points = get_user.points
-        scoreboard_objects = User_points.objects.all().order_by('-points')
+        scoreboard_objects = User_points.objects.all().order_by('-points')[:10]
 
         usernames = [str(e.user) for e in scoreboard_objects]
         points = [e.points for e in scoreboard_objects]
