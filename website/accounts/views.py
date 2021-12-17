@@ -26,17 +26,17 @@ def remove_account(request):
     return redirect('/loginPage')
 
 def dashboard(request):
-    scoreboard_objects = User_points.objects.all().order_by('-points')
-
-    usernames = [str(e.user) for e in scoreboard_objects]
-    points = [e.points for e in scoreboard_objects]
-
-    user_and_points = zip(usernames, points)
-
+    
     if not request.user.is_anonymous:
         current_user = request.user
         get_user = User_points.objects.get(user=current_user)
         user_points = get_user.points
+        scoreboard_objects = User_points.objects.all().order_by('-points')
+
+        usernames = [str(e.user) for e in scoreboard_objects]
+        points = [e.points for e in scoreboard_objects]
+
+        user_and_points = zip(usernames, points)
         return render(request, 'accounts/dashboard.html', {'user_and_points':user_and_points, 'user_points':user_points})
     return render(request, 'accounts/dashboard.html')
 
