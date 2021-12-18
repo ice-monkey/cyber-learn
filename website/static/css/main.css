@@ -74,7 +74,7 @@ table {
 
 
 
-/* LOGIN PAGE */
+/* LOGIN PAGE and SIGN UP*/
 .loginContainer {
   margin-top: 200px;
   height: 500px;
@@ -97,6 +97,11 @@ table {
   background-color: white;
   border: solid black;
   border-radius: 25px;
+}
+
+.passDesc {
+  margin-top: 0;
+  margin-bottom: 0;
 }
 
 

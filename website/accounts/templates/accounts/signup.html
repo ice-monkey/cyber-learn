@@ -22,12 +22,17 @@
           </div>
           <div class="form-floating loginForms">
                 {{form.password1}}
-            </div>
-             <div class="form-floating loginForms">
+          </div>
+          <div class="form-floating loginForms">
                 {{form.password2}}
-            </div>
-                <button class="w-100 btn btn-lg btn-success loginBtn" type="submit">Sign-Up</button>
-            </form>
+          </div>
+            <p class="passDesc"><strong>Password Requirements</p></strong>
+            <p class="passDesc"><small>Can’t be too similar to your other personal information.</small></p>
+            <p class="passDesc"><small>Must contain at least 8 characters.</small></p>
+            <p class="passDesc"><small>Can’t be a commonly used password.</small></p>
+            <p class="passDesc"><small>Can’t be entirely numeric.</small></p>
+            <button class="w-100 btn btn-lg btn-success loginBtn" type="submit">Sign-Up</button>
+          </form>
                 {{form.errors}}
       </main>
       </div>
